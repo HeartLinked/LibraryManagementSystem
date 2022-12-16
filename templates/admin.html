@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel = "stylesheet" href = "/static/css/layui.css">
+</head>
+<body>
+
+<div style="width: 1350px;height:600px;margin: 100px auto">
+
+    <table lay-filter="demo">
+  <thead>
+    <tr>
+      <th lay-data="{field:'book_ID'}">编号</th>
+      <th lay-data="{field:'book_category'}">类别</th>
+      <th lay-data="{field:'book_name'}">书名</th>
+      <th lay-data="{field:'book_publisher'}">出版社</th>
+      <th lay-data="{field:'book_year'}">年份</th>
+      <th lay-data="{field:'book_author'}">作者</th>
+      <th lay-data="{field:'book_price'}">价格</th>
+      <th lay-data="{field:'book_tot_number'}">总数</th>
+      <th lay-data="{field:'book_inv_number'}">现有数</th>
+      <th lay-data="{field:'update'}">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for i in data_list %}
+    <tr>
+      <td>{{ i.book_ID }}</td>
+      <td>{{ i.book_category }}</td>
+      <td>{{ i.book_name }}</td>
+      <td>{{ i.book_publisher }}</td>
+      <td>{{ i.book_year }}</td>
+      <td>{{ i.book_author }}</td>
+      <td>{{ i.book_price }}</td>
+      <td>{{ i.book_tot_number }}</td>
+      <td>{{ i.book_inv_number }}</td>
+      <td>
+          <a href="/change/{{ i.book_ID }}" class="layui-btn layui-btn-sm layui-btn-normal">修改</a>
+          <a href="/delete/{{ i.book_ID }}" class="layui-btn layui-btn-sm layui-btn-danger">删除</a>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<div style="margin: 21px auto">
+    <a href = "/add" class ="layui-btn">新增书籍</a>
+    <a href = "/add_student" class ="layui-btn">新增用户</a>
+    <a href = "/query_user" class ="layui-btn">查看用户列表</a>
+</div>
+<div style="margin: 21px auto"></div>
+<blockquote class="layui-elem-quote">欢迎使用图书管理系统！这是Heart Linked的数据库实验5作业！希望你玩的开心！</blockquote>
+</div>
+
+
+<script src = "/static/layui.js"></script>
+
+<script>
+//Demo
+layui.use('form', function(){
+  var table = layui.table;
+
+//转换静态表格
+table.init('demo', {
+  height: 540 //设置高度
+  ,limit: 100 //注意：请务必确保 limit 参数（默认：10）是与你服务端限定的数据条数一致
+  //支持所有基础参数
+    , width: 1400
+})
+})
+</script>
+
+</body>
+</html>

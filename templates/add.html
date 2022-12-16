@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel = "stylesheet" href = "/static/css/layui.css">
+</head>
+<body>
+
+<div style = "width:500px; height: 400px; margin: 100px auto;">
+    <form class="layui-form" action="/add2" method = "POST">
+
+  <div class="layui-form-item">
+    <label class="layui-form-label">编号</label>
+    <div class="layui-input-block">
+      <input type="text" name="book_ID" required  lay-verify="required"
+             placeholder="请输入书的编号" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">类别</label>
+    <div class="layui-input-block">
+        <select name="category" lay-verify="" lay-search>
+          <option value="">请选择一个类别</option>
+          <option value="语文" selected>语文</option>
+          <option value="历史">历史</option>
+          <option value="数学">数学</option>
+          <option value="英语">英语</option>
+          <option value="地理">地理</option>
+          <option value="军事">军事</option>
+          <option value="数学">数学</option>
+        </select>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">书名</label>
+    <div class="layui-input-block">
+      <input type="text" name="book_name" required  lay-verify="required"
+             placeholder="请输入书名" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">出版社</label>
+    <div class="layui-input-block">
+      <input type="text" name="publisher" required  lay-verify="required"
+             placeholder="请输入出版社" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">年份</label>
+    <div class="layui-input-block">
+      <input type="text" name="book_year" required  lay-verify="required"
+             placeholder="请输入年份（四位公历数字）" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">作者</label>
+    <div class="layui-input-block">
+      <input type="text" name="book_author" required  lay-verify="required"
+             placeholder="请输入作者" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">价格</label>
+    <div class="layui-input-block">
+      <input type="text" name="book_price" required  lay-verify="required"
+             placeholder="请输入价格" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">总数</label>
+    <div class="layui-input-block">
+      <input type="text" name="tot_number" required  lay-verify="required"
+             placeholder="请输入总数" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">现有数</label>
+    <div class="layui-input-block">
+      <input type="text" name="book_inv_number" required  lay-verify="required"
+             placeholder="请输入现有数" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button id = "submiti" class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+</form>
+</div>
+
+<script src = "/static/layui.js"></script>
+
+<script>
+//Demo
+layui.use('form','layer', function(){
+  var form = layui.form;
+  //监听提交
+
+})
+</script>
+
+</body>
+</html>
